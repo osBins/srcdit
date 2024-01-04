@@ -14,13 +14,14 @@ def key_value_edit(file, key, value):
         for i in range(len(lines)):
             if lines[i].find(key) != -1:
                 lines[i] = f"{key}={value}"
-                print(lines[i])
                 break
-            else:
-                print("not")
+        else:
+            print("Key not found")
+            return
     
     with open(file, "w") as f:
-        data = str(lines)
+        data = '\n'.join(lines)
         f.write(data)
-        
-key_value_edit('test', "key2", "value1")
+        print("Written out")
+
+key_value_edit('test', "key3", "value1")
