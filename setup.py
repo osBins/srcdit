@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from setuptools import setup, find_packages
 from pathlib import Path
 
@@ -6,7 +8,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='srcdit',
-    version='0.1.7',
+    version='0.1.8',
     author='Arpit Jain',
     # description='Edit dotfiles from terminal',
     scripts=['srcdit/srcdit.py'],

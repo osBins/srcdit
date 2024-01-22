@@ -1,3 +1,3 @@
 # srcdit
 
-Edit dotfiles from terminal
+One command to edit and source dotfiles directly from terminal
