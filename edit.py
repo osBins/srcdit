@@ -1,18 +1,20 @@
-import subprocess
+import sys
 
-def get_keys():
-    pass
 
-def get_values():
-    pass
+def key_value_edit(file, key_value):
+    key, value = key_value.split("=")
 
-def key_value_edit(file, key, value):
+    try:
+        int(value)
+    except ValueError:
+        value = f'"{value}"'
+
     with open(file, "r") as f:
         data = f.read()
         lines = data.split("\n")
-        
         for i in range(len(lines)):
             if lines[i].find(key) != -1:
+                print("Found line with given key")
                 lines[i] = f"{key}={value}"
                 break
         else:
@@ -23,18 +25,22 @@ def key_value_edit(file, key, value):
                     lines.append(f"{key}={value}")
                     break
                 elif yes_no.lower() in ["no", "n"]:
-                    print("Not written.")
+                    print("Not written")
                     return
                 else:
-                    print("Invalid input. Please enter yes/no.")
-    
+                    print("Invalid input. Please enter yes/no")
     with open(file, "w") as f:
-        data = '\n'.join(lines)
+        data = "\n".join(lines)
         f.write(data)
         print("Written out")
 
+
 def main():
-    key_value_edit('test', "key4", "value1")
+    if len(sys.argv) != 3:
+        print("Invalid arguments")
+        return
+    key_value_edit(sys.argv[1], sys.argv[2])
+
 
 if __name__ == "__main__":
     main()
