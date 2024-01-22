@@ -1,8 +1,12 @@
+#!python3
 import sys
 
 
 def key_value_edit(file, key_value):
-    key, value = key_value.split("=")
+    try:
+        key, value = key_value.split("=")
+    except ValueError:
+        print("Incorrect syntax")
 
     try:
         int(value)
