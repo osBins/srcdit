@@ -10,7 +10,6 @@ setup(
     name='srcdit',
     version='0.1.9',
     author='Arpit Jain',
-    # description='Edit dotfiles from terminal',
     scripts=['srcdit/srcdit.py'],
     entry_points = {
     'console_scripts': ['srcdit=srcdit:main'],

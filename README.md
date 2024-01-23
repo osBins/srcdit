@@ -11,3 +11,7 @@ Example -
 ```bash
 srcdit .zshrc ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
+
+### WIP!
+* Source edited files
+* Debug
