@@ -1,4 +1,3 @@
-#!python3
 import sys
 import subprocess
 import os
@@ -65,17 +64,12 @@ def key_value_edit(file, key_value):
     print(Fore.RESET + "", end="")
 
 
-def source_file(file):
-    subprocess.run(f"source {file}", shell=True)
-
-
 def main():
     if len(sys.argv) != 3:
         print("Invalid arguments")
         return
 
     key_value_edit(sys.argv[1], sys.argv[2])
-    source_file(sys.argv[1])
 
 
 if __name__ == "__main__":

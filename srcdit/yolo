@@ -1,2 +1,4 @@
 export _NEW="hs"
 Hi="yoo"
+export test="value1"
+hello="newvals"
