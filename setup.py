@@ -8,8 +8,10 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='srcdit',
-    version='0.1.9',
-    author='Arpit Jain',
+    version='0.1.10',
+    author='Arpit J',
+    maintainer='Arpit J',
+    description="Edit and source dotfiles directly from the terminal",
     scripts=['srcdit/srcdit.py'],
     entry_points = {
     'console_scripts': ['srcdit=srcdit:main'],

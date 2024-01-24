@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pip install dist/srcdit-*
+pip install dist/srcdit-* --force-reinstall

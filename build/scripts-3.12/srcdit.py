@@ -8,7 +8,14 @@ from colorama import Fore
 
 def key_value_edit(file, key_value):
     if not os.path.isfile(file):
-        print(Fore.RED + "File " + Fore.BLUE + file + Fore.RED + " not found. Did you misspell?")
+        print(
+            Fore.RED
+            + "File "
+            + Fore.BLUE
+            + file
+            + Fore.RED
+            + " not found. Did you misspell?"
+        )
         exit()
 
     try:
@@ -22,7 +29,6 @@ def key_value_edit(file, key_value):
     except ValueError:
         value = f'"{value}"'
 
-
     with open(file, "r") as f:
         data = f.read()
         lines = data.split("\n")
@@ -30,7 +36,8 @@ def key_value_edit(file, key_value):
         for i in range(len(lines)):
             if lines[i].find(key) != -1:
                 print(Fore.RESET + "Found line with given key - " + Fore.BLUE + key)
-                lines[i] = f"{key}={value}"
+                front, _ = lines[i].split(key)
+                lines[i] = front + f"{key}={value}"
                 break
 
         else:
@@ -55,11 +62,11 @@ def key_value_edit(file, key_value):
         f.write(data)
         print(Fore.GREEN + "File changed")
 
-    # print(Fore.RESET)
+    print(Fore.RESET + "", end="")
 
 
 def source_file(file):
-    os.system(". ./" + file)
+    subprocess.run("source ./yolo", shell=True)
 
 
 def main():
