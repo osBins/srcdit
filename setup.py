@@ -8,7 +8,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='srcdit',
-    version='0.1.10',
+    version='0.1.11',
     author='Arpit J',
     maintainer='Arpit J',
     description="Edit and source dotfiles directly from the terminal",

@@ -66,7 +66,7 @@ def key_value_edit(file, key_value):
 
 
 def source_file(file):
-    subprocess.run("source ./yolo", shell=True)
+    subprocess.run(f"source {file}", shell=True)
 
 
 def main():
